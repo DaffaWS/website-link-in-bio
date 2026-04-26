@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Bio Link — Daffa" />
+  <title>Daffa — Bio Link</title>
+
+  <!-- Favicon placeholder -->
+  <link rel="icon" type="image/png" href="assets/profile/profile.png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* Page-specific inline additions */
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20%, 60% { transform: translateX(-6px); }
+      40%, 80% { transform: translateX(6px); }
+    }
+    .lock-input.shake { animation: shake 0.35s ease; }
+  </style>
+</head>
+<body>
+
+  <!-- =====================
+       PARTICLE BACKGROUND
+       ===================== -->
+  <canvas id="particle-canvas" aria-hidden="true"></canvas>
+
+  <!-- =====================
+       REFRESH BUTTON (SECRET)
+       Tombol ini jelas terlihat di kanan atas.
+       Fungsi normal  : refresh halaman biasa.
+       Fungsi rahasia : pola klik bertahap (step 0–4)
+                        untuk membuka halaman generator.
+       ===================== -->
+  <button class="btn-refresh" id="btn-refresh" title="Refresh halaman" aria-label="Refresh halaman">
+    <svg class="btn-refresh-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" />
+      <path d="M21 3v5h-5" />
+      <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" />
+      <path d="M8 16H3v5" />
+    </svg>
+    <span class="btn-refresh-label">Refresh</span>
+  </button>
+
+  <!-- Tidak ada indicator apapun — sistem bekerja diam-diam -->
+
+  <!-- =====================
+       LOADING OVERLAY
+       ===================== -->
+  <div class="loading-overlay" id="loading-overlay" aria-hidden="true">
+    <div class="loading-spinner"></div>
+    <div class="loading-text">Redirecting...</div>
+  </div>
+
+  <!-- =====================
+       PASSWORD LOCK OVERLAY
+       ===================== -->
+  <div class="lock-overlay" id="lock-overlay" role="dialog" aria-modal="true" aria-label="Password diperlukan">
+    <div class="lock-box">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin: 0 auto 12px; color: #00b4ff; display:block;">
+        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+        <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+      </svg>
+      <h3 class="lock-title">Protected Link</h3>
+      <p>Masukkan password untuk membuka link ini</p>
+      <input
+        class="lock-input"
+        type="password"
+        placeholder="••••••••"
+        autocomplete="off"
+        spellcheck="false"
+      />
+      <div class="lock-error"></div>
+      <button class="lock-btn">Buka Link</button>
+      <div class="lock-cancel">Batal</div>
+    </div>
+  </div>
+
+  <!-- =====================
+       MAIN BIO CONTENT
+       ===================== -->
+  <main class="bio-wrapper">
+
+    <!-- Banner -->
+    <section class="banner-section">
+      <img
+        class="banner-img"
+        src="assets/banner/banner.jpg"
+        alt="Banner"
+        onerror="this.style.background='linear-gradient(135deg, #0a0a10 0%, #0d1a2a 50%, #0a0a10 100%)'; this.style.height='260px'; this.removeAttribute('src');"
+      />
+      <div class="banner-overlay"></div>
+    </section>
+
+    <!-- Profile -->
+    <section class="profile-section">
+      <img
+        class="profile-avatar reveal"
+        src="assets/profile/profile.png"
+        alt="Foto Profil Daffa"
+        onerror="this.style.background='linear-gradient(135deg,#0d1a2a,#001a33)'; this.removeAttribute('src');"
+      />
+      <h1 class="profile-name reveal" style="transition-delay:0.1s">Daffa</h1>
+      <p class="profile-desc reveal" style="transition-delay:0.15s">
+        Go Developer &amp; Bot Builder · TikTok Live Creator<br/>
+        Building real-time systems &amp; creative automations
+      </p>
+      <div class="profile-tags reveal reveal-stagger" style="transition-delay:0.2s">
+        <span class="tag">Go Lang</span>
+        <span class="tag">Python</span>
+        <span class="tag">Bot Dev</span>
+        <span class="tag">Minecraft</span>
+        <span class="tag">TikTok Live</span>
+      </div>
+    </section>
+
+    <!-- Section Label -->
+    <div class="section-divider reveal" style="transition-delay:0.25s">Links</div>
+
+    <!-- ===========================
+         LINKS CONTAINER
+         Paste kode dari generator di sini
+         =========================== -->
+    <div class="links-container reveal-stagger" id="links-container">
+
+      <!--
+      =============================
+      CONTOH KODE — Paste output generator di sini
+      Hapus contoh ini dan ganti dengan kode asli dari generator
+      =============================
+      -->
+
+
+
+
+      <!-- Contoh: Link YouTube tanpa password -->
+      <!-- <a
+        href="https://youtube.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="link-card anim-glow"
+        id="link-yt-demo"
+        onclick="this.classList.add('clicked')"
+      >
+        <img src="assets/png/logoyoutube.png" alt="YouTube" class="link-card-logo"
+          onerror="this.style.display='none'" />
+        <span class="link-card-title">YouTube Channel</span>
+        <span class="link-card-arrow">→</span>
+      </a> -->
+
+      <!-- Contoh: Link tanpa logo -->
+      <!-- <a
+        href="https://github.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="link-card anim-scale"
+        onclick="this.classList.add('clicked')"
+      >
+        <span class="link-card-title" style="text-align:center;flex:1;">GitHub Projects</span>
+        <span class="link-card-arrow">→</span>
+      </a> -->
+
+      <!-- Contoh: Link dengan password -->
+      <!-- <div
+        class="link-card link-card-locked anim-glow"
+        data-locked="true"
+        data-href="https://example.com/private"
+        data-password="daffa123"
+        style="cursor:pointer;"
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;color:#00b4ff;margin-right:4px;">
+          <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+        </svg>
+        <span class="link-card-title">Private Access</span>
+        <span class="link-card-arrow" style="color:#00b4ff;">🔒</span>
+      </div> -->
+
+      <!--
+      =============================
+      BATAS CONTOH
+      =============================
+      -->
+
+    </div>
+    <!-- /links-container -->
+
+    <!-- Kalimat Penutup -->
+    <p class="closing-text reveal">
+      "Kode adalah seni,<br/>
+      setiap baris adalah sebuah <span>ekspresi</span>."
+    </p>
+
+    <!-- Footer -->
+    <footer class="bio-footer reveal">
+      copyright web by <a href="#" rel="noopener">daffa.w.s</a>
+    </footer>
+
+  </main>
+
+  <!-- Main Script -->
+  <script src="js/script.js"></script>
+
+</body>
+</html>

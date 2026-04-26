@@ -384,22 +384,22 @@ window.showToast = function(msg, duration = 2000) {
 
 
 /* =============================
-KODE ID translate (JS)
-Animasi: wiggle
+KODE ID nvstore (JS)
+Animasi: shake
 ============================= */
 
 (function() {
-  const c = document.getElementById('translate');
+  const c = document.getElementById('nvstore');
   if (!c) return;
   c.addEventListener('click', function(e) {
     if (e.target.closest('.ripple-wave,.xp-dot')) return;
     this.classList.remove('clicked'); void this.offsetWidth; this.classList.add('clicked');
-    setTimeout(() => window.open('https://translate.google.com/', '_blank', 'noopener,noreferrer'), 120);
+    setTimeout(() => window.open('https://www.youtube.com/@NeonVortexStore', '_blank', 'noopener,noreferrer'), 120);
   });
 })();
 
 /* Animasi ini murni CSS — tidak butuh JS tambahan. */
 
 /* =============================
-BATAS AKHIR KODE ID translate
+BATAS AKHIR KODE ID nvstore
 ============================= */

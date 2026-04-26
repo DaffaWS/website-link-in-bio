@@ -1116,32 +1116,30 @@ button {
 
 
 /* =============================
-KODE ID translate (CSS)
-Font   : Courier Prime | 300 | 14px
-Animasi: wiggle
+KODE ID nvstore (CSS)
+Font   : Libre Baskerville | 400 | 14px
+Animasi: shake
 ============================= */
 
 /* Import font (skip jika sudah ada di style.css) */
-@import url('https://fonts.googleapis.com/css2?family=Courier%20Prime:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre%20Baskerville:wght@300;400;500;600;700;800&display=swap');
 
 /* Tipografi */
-#translate .link-card-title {
-  font-family: 'Courier Prime', sans-serif;
-  font-weight: 300;
+#nvstore .link-card-title {
+  font-family: 'Libre Baskerville', sans-serif;
+  font-weight: 400;
   font-size: 14px;
 }
 
-#translate { animation: wiggle_translate 4s ease infinite; }
-@keyframes wiggle_translate {
-  0%,82%,100% { transform: rotate(0deg); }
-  84%  { transform: rotate(-3deg); }
-  86%  { transform: rotate(3deg); }
-  88%  { transform: rotate(-2.5deg); }
-  90%  { transform: rotate(2.5deg); }
-  92%  { transform: rotate(-1.5deg); }
-  94%  { transform: rotate(1deg); }
-  96%  { transform: rotate(-0.5deg); }
+#nvstore { animation: shake_nvstore 3s ease infinite; }
+@keyframes shake_nvstore {
+  0%,88%,100% { transform: translateX(0); }
+  90% { transform: translateX(-5px) rotate(-0.6deg); }
+  92% { transform: translateX(5px) rotate(0.6deg); }
+  94% { transform: translateX(-4px); }
+  96% { transform: translateX(4px); }
+  98% { transform: translateX(-1px); }
 }
 /* =============================
-BATAS AKHIR KODE ID translate
+BATAS AKHIR KODE ID nvstore
 ============================= */

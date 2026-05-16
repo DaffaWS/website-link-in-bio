@@ -1131,10 +1131,22 @@ Animasi: pulse-glow
   font-size: 15px;
 }
 
-#canva { animation: pGlow_canva 2.5s ease-in-out infinite; }
+#canva { 
+  animation: pGlow_canva 2.5s ease-in-out infinite; 
+}
+
 @keyframes pGlow_canva {
-  0%,100% { box-shadow: 0 0 8px rgba(0,180,255,0.1); border-color: rgba(0,180,255,0.12); }
-  50%     { box-shadow: 0 0 28px rgba(0,180,255,0.55), 0 0 56px rgba(0,180,255,0.2); border-color: rgba(0,180,255,0.5); }
+  0%,100% { 
+    box-shadow: 0 0 40px rgba(0,180,255,0.1); 
+    border-color: rgba(0,180,255,0.12); 
+  }
+  
+  50% { 
+    box-shadow: 
+      0 0 140px rgba(0,180,255,0.55), 
+      0 0 280px rgba(0,180,255,0.2); 
+    border-color: rgba(0,180,255,0.5); 
+  }
 }
 /* =============================
 BATAS AKHIR KODE ID canva

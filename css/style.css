@@ -1116,6 +1116,33 @@ button {
 
 
 /* =============================
+KODE ID canva (CSS)
+Font   : Space Grotesk | 700 | 15px
+Animasi: pulse-glow
+============================= */
+
+/* Import font (skip jika sudah ada di style.css) */
+@import url('https://fonts.googleapis.com/css2?family=Space%20Grotesk:wght@300;400;500;600;700;800&display=swap');
+
+/* Tipografi */
+#canva .link-card-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+#canva { animation: pGlow_canva 2.5s ease-in-out infinite; }
+@keyframes pGlow_canva {
+  0%,100% { box-shadow: 0 0 8px rgba(0,180,255,0.1); border-color: rgba(0,180,255,0.12); }
+  50%     { box-shadow: 0 0 28px rgba(0,180,255,0.55), 0 0 56px rgba(0,180,255,0.2); border-color: rgba(0,180,255,0.5); }
+}
+/* =============================
+BATAS AKHIR KODE ID canva
+============================= */
+
+
+
+/* =============================
 KODE ID nvstore (CSS)
 Font   : Libre Baskerville | 400 | 14px
 Animasi: shake

@@ -383,6 +383,21 @@ window.showToast = function(msg, duration = 2000) {
 };
 
 
+
+/* =============================
+KODE ID canva (JS)
+Animasi: pulse-glow
+============================= */
+
+/* Password system ditangani oleh js/script.js */
+
+/* Animasi ini murni CSS — tidak butuh JS tambahan. */
+
+/* =============================
+BATAS AKHIR KODE ID canva
+============================= */
+
+
 /* =============================
 KODE ID nvstore (JS)
 Animasi: shake
